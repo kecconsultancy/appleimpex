@@ -2,9 +2,9 @@
   "name": "appleimpex",
   "version": "1.0.0",
   "description": "It is  a application for stock management, billing and invoice Management.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "start"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kecconsultancy/appleimpex#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
     "electron": "^23.0.0"
   }
 }
