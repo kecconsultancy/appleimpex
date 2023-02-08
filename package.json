@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kecconsultancy/appleimpex/issues"
   },
-  "homepage": "https://github.com/kecconsultancy/appleimpex#readme"
+  "homepage": "https://github.com/kecconsultancy/appleimpex#readme",
+  "devDependencies": {
+    "electron": "^23.0.0"
+  }
 }
