@@ -46,9 +46,9 @@ export function FabricForm() {
                         label="Date"
                       ></Inputs>
                       <Inputs
-                        type="date"
-                        placeholder="Date"
-                        label="Date"
+                        type="number"
+                        placeholder="Total Amount"
+                        label=""
                       ></Inputs>
                       <button type="submit" class="btn btn-primary">
                         Submit
