@@ -8,43 +8,54 @@ export function ParcelForm() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Create Packing</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Name</label>
                         <input
                           type="email"
                           class="form-control"
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                          placeholder="Enter name"
                         />
-                        <small id="emailHelp" class="form-text text-muted">
+                        {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
-                        </small>
+                        </small> */}
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1">
+                          Packing Team Name
+                        </label>
                         <input
-                          type="password"
+                          type="name"
                           class="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Password"
+                          placeholder="Packing Team Name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Phone Number</label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Enter Phone number"
                         />
                       </div>
                       <div class="form-group form-check">
-                        <input
+                        {/* <input
                           type="checkbox"
                           class="form-check-input"
                           id="exampleCheck1"
-                        />
-                        <label class="form-check-label" for="exampleCheck1">
+                        /> */}
+                        {/* <label class="form-check-label" for="exampleCheck1">
                           Check me out
-                        </label>
+                        </label> */}
                       </div>
                       <button type="submit" class="btn btn-primary">
                         Submit
@@ -52,7 +63,7 @@ export function ParcelForm() {
                     </form>
                   </div>
                   <div class="col-md-6">
-                    <form>
+                    {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -63,7 +74,7 @@ export function ParcelForm() {
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlSelect1">
-                          Example select
+                          Exampleaa select
                         </label>
                         <select
                           class="form-control"
@@ -76,7 +87,7 @@ export function ParcelForm() {
                           <option>5</option>
                         </select>
                       </div>
-                    </form>
+                    </form> */}
                   </div>
                 </div>
               </div>
