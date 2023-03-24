@@ -20,19 +20,39 @@ export function FabricForm() {
                         placeholder="Fabric Name"
                         label="Fabric name"
                       ></Inputs>
-
+                      <Inputs
+                        type="text"
+                        placeholder="Fabric Type"
+                        label="Fabric Type"
+                      ></Inputs>
+                      <Inputs
+                        type="number"
+                        placeholder="GSM Number"
+                        label="GSM Number"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder="Fabric export name"
+                        label="Fabric export name"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder="Quality"
+                        label="Quality"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Date"
+                        label="Date"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Date"
+                        label="Date"
+                      ></Inputs>
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
-                    </form>
-                  </div>
-                  <div class="col-md-6">
-                    <form>
-                      <Inputs
-                        type="text"
-                        placeholder="Fabric Name"
-                        label="Fabric name"
-                      ></Inputs>
                     </form>
                   </div>
                 </div>
