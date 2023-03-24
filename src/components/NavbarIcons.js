@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavbarIcons(props) {
   return (
@@ -6,12 +7,13 @@ function NavbarIcons(props) {
       data-username="form elements advance componant validation masking wizard picker select"
       className="nav-item"
     >
-      <a href="form_elements.html" className="nav-link ">
-        <span className="pcoded-micon">
+      <Link to={props.link} className="nav-link ">
+        {/* <span className="pcoded-micon">
           <i className="feather icon-file-text"></i>
-        </span>
+        </span> */}
+
         <span className="pcoded-mtext">{props.placeholder}</span>
-      </a>
+      </Link>
     </li>
   );
 }

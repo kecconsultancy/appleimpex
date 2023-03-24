@@ -1,6 +1,6 @@
 import HeaderSection from "./components/HeaderSection";
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { CustomerForm, EditCustomer } from "./components/CustomerForm";
 import { AddFabric, FabricForm } from "./components/FabricForm";
 import { AssingRing, RingForm } from "./components/RingForm";

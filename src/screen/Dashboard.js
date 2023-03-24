@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CardProfiltLoss from "../components/CardProfiltLoss";
 import RecentTransactions from "../components/RecentTransactions";
 import TranactionsList from "../components/TranactionsList";

@@ -35,11 +35,26 @@ function Navbar() {
             <li className="nav-item pcoded-menu-caption">
               <label>Forms</label>
             </li>
-            <NavbarIcons placeholder="Create Fabric"></NavbarIcons>
-            <NavbarIcons placeholder="Create Customer"></NavbarIcons>
-            <NavbarIcons placeholder="Create Tailor"></NavbarIcons>
-            <NavbarIcons placeholder="Create Ringer"></NavbarIcons>
-            <NavbarIcons placeholder="Create Parceler"></NavbarIcons>
+            <NavbarIcons
+              placeholder="Create Fabric"
+              link="/createfabric"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Create Customer"
+              link="/createcustomer"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Create Tailor"
+              link="/createtailor"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Create Ringer"
+              link="/createring"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Create Parceler"
+              link="/createparceler"
+            ></NavbarIcons>
 
             <li className="nav-item pcoded-menu-caption">
               <label>Forms</label>
