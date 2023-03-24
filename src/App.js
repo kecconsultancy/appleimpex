@@ -1,7 +1,7 @@
 import HeaderSection from "./components/HeaderSection";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
-import { CustomerFrom, EditCustomer } from "./components/CustomerFrom";
+import { CustomerForm, EditCustomer } from "./components/CustomerForm";
 import { AddFabric, FabricForm } from "./components/FabricForm";
 import { AssingRing, RingForm } from "./components/RingForm";
 import { AssignTailor, TailorFrom } from "./components/TailorFrom";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/table" element={<TableContainer></TableContainer>} />
         <Route path="/" element={<FormContainer />}>
           <Route path="createfabric" element={<FabricForm />} />
-          <Route path="createcustomer" element={<CustomerFrom />} />
+          <Route path="createcustomer" element={<CustomerForm />} />
           <Route path="createorder" element={<OrderForm />} />
           <Route path="createtailor" element={<TailorFrom />} />
           <Route path="createring" element={<RingForm />} />
@@ -36,7 +36,7 @@ function App() {
         </Route>
         <Route path="/" element={<FormContainer />}>
           <Route path="fabriclist" element={<AddFabric />} />
-          <Route path="customerlist" element={<EditCustomer />} />
+          {/* <Route path="customerlist" element={<EditCustomer />} /> */}
           <Route path="orderlist" element={<EditOrder />} />
           <Route path="tailorlist" element={<AssignTailor />} />
           <Route path="ringerlist" element={<AssingRing />} />
