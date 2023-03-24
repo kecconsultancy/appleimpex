@@ -51,8 +51,8 @@ export function OrderForm() {
                       </button>
                     </form>
                   </div>
-                  <div class="col-md-6">
-                    <form>
+                  {/* <div class="col-md-6"> */}
+                  {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -77,7 +77,7 @@ export function OrderForm() {
                         </select>
                       </div>
                     </form>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

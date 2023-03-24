@@ -1,6 +1,6 @@
 import React from "react";
 
-export function CustomerFrom(props) {
+export function OrderForm() {
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -15,14 +15,17 @@ export function CustomerFrom(props) {
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
+                        <label for="exampleInputEmail1">Email address</label>
                         <input
-                          type="text"
+                          type="email"
                           class="form-control"
                           id="exampleInputEmail1"
-                          // aria-describedby="emailHelp"
-                          placeholder="Enter Name"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
                         />
+                        <small id="emailHelp" class="form-text text-muted">
+                          We'll never share your email with anyone else.
+                        </small>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
@@ -33,14 +36,23 @@ export function CustomerFrom(props) {
                           placeholder="Password"
                         />
                       </div>
-
+                      <div class="form-group form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label class="form-check-label" for="exampleCheck1">
+                          Check me out
+                        </label>
+                      </div>
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
-                  <div class="col-md-6">
-                    <form>
+                  {/* <div class="col-md-6"> */}
+                  {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -65,7 +77,7 @@ export function CustomerFrom(props) {
                         </select>
                       </div>
                     </form>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -75,8 +87,7 @@ export function CustomerFrom(props) {
     </div>
   );
 }
-
-export function EditCustomer(props) {
+export function EditOrder() {
   return (
     <div class="main-body">
       <div class="page-wrapper">

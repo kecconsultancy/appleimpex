@@ -1,5 +1,5 @@
 import React from "react";
-import Inputs from "./Inputs";
+import Inputs, { Selects } from "./Inputs";
 
 export function FabricForm() {
   return (
@@ -35,11 +35,10 @@ export function FabricForm() {
                         placeholder="Fabric export name"
                         label="Fabric export name"
                       ></Inputs>
-                      <Inputs
-                        type="text"
-                        placeholder="Quality"
+                      <Selects
                         label="Quality"
-                      ></Inputs>
+                        option={["Low", "Medium", "High"]}
+                      ></Selects>
                       <Inputs
                         type="date"
                         placeholder="Date"
@@ -47,8 +46,8 @@ export function FabricForm() {
                       ></Inputs>
                       <Inputs
                         type="number"
-                        placeholder="Total Amount"
-                        label=""
+                        placeholder=" Amount"
+                        label="Amount in Rupees"
                       ></Inputs>
                       <button type="submit" class="btn btn-primary">
                         Submit
