@@ -15,45 +15,105 @@ export function FabricForm() {
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                      <Inputs
-                        type="text"
-                        placeholder="Fabric Name"
-                        label="Fabric name"
-                      ></Inputs>
-                      <Inputs
-                        type="text"
-                        placeholder="Fabric Type"
-                        label="Fabric Type"
-                      ></Inputs>
-                      <Inputs
-                        type="number"
-                        placeholder="GSM Number"
-                        label="GSM Number"
-                      ></Inputs>
-                      <Inputs
-                        type="text"
-                        placeholder="Fabric export name"
-                        label="Fabric export name"
-                      ></Inputs>
-                      <Selects
-                        label="Quality"
-                        option={["Low", "Medium", "High"]}
-                      ></Selects>
-                      <Inputs
-                        type="date"
-                        placeholder="Date"
-                        label="Date"
-                      ></Inputs>
-                      <Inputs
-                        type="number"
-                        placeholder=" Amount"
-                        label="Amount in Rupees"
-                      ></Inputs>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Fabric Name</label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter  Fabric Name"
+                        />
+                        {/* <small id="emailHelp" class="form-text text-muted">
+                          We'll never share your email with anyone else.
+                        </small> */}
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Quality</label>
+                        {/* <input
+                          type="Ouality"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Quality "
+                        /> */}
+                      </div>
+                      <div class="form-group form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          Low
+                        </label>
+                        <br></br>
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          Medium
+                        </label>
+                        <br></br>
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          High
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">GSM Number</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Gsm "
+                        />
+                        {/* <small id="emailHelp" class="form-text text-muted">
+                          We'll never share your email with anyone else.
+                        </small> */}
+                      </div>
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
+                  {/* <div class="col-md-6"> */}
+                  {/* <form>
+                      <div class="form-group">
+                        <label>Text</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Text"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                          Example select
+                        </label>
+                        <select
+                          class="form-control"
+                          id="exampleFormControlSelect1"
+                        >
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div> */}
                 </div>
               </div>
             </div>

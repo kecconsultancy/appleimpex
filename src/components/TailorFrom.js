@@ -8,35 +8,55 @@ export function TailorFrom() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Create Tailor</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Tailor Name</label>
                         <input
                           type="email"
                           class="form-control"
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                          placeholder="Enter Tailor Name"
                         />
-                        <small id="emailHelp" class="form-text text-muted">
+                        {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
-                        </small>
+                        </small> */}
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1">
+                          Tailor Shop Name
+                        </label>
                         <input
-                          type="password"
+                          type="name"
                           class="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Password"
+                          placeholder="Enter Shop Name "
                         />
                       </div>
-                      <div class="form-group form-check">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Mobile Number</label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Enter Mobile Number  "
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Address</label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Enter Address"
+                        />
+                      </div>
+                      {/* <div class="form-group form-check">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -45,14 +65,14 @@ export function TailorFrom() {
                         <label class="form-check-label" for="exampleCheck1">
                           Check me out
                         </label>
-                      </div>
+                      </div> */}
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
                   <div class="col-md-6">
-                    <form>
+                    {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -76,7 +96,7 @@ export function TailorFrom() {
                           <option>5</option>
                         </select>
                       </div>
-                    </form>
+                    </form> */}
                   </div>
                 </div>
               </div>

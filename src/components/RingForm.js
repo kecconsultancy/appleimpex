@@ -8,35 +8,78 @@ export function RingForm() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Create Ring</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Ring Name</label>
                         <input
                           type="email"
                           class="form-control"
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
-                          placeholder="Enter email"
+                          placeholder="Ring Name"
                         />
-                        <small id="emailHelp" class="form-text text-muted">
+                        {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
-                        </small>
+                        </small> */}
+                      </div>
+
+                      <div class="form-group form-check">
+                        <label>Quality</label>
+                        <br></br>
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          Low
+                        </label>
+                        <br></br>
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          Medium
+                        </label>
+                        <br></br>
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+
+                        <label class="form-check-label" for="exampleCheck1">
+                          High
+                        </label>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1">Size</label>
                         <input
-                          type="password"
+                          type="text"
                           class="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Password"
+                          placeholder="Enter Size"
                         />
                       </div>
-                      <div class="form-group form-check">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Material</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Enter Material"
+                        />
+                      </div>
+                      {/* <div class="form-group form-check">
                         <input
                           type="checkbox"
                           class="form-check-input"
@@ -45,13 +88,13 @@ export function RingForm() {
                         <label class="form-check-label" for="exampleCheck1">
                           Check me out
                         </label>
-                      </div>
+                      </div> */}
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
-                  <div class="col-md-6">
+                  {/* <div class="col-md-6">
                     <form>
                       <div class="form-group">
                         <label>Text</label>
@@ -76,8 +119,8 @@ export function RingForm() {
                           <option>5</option>
                         </select>
                       </div>
-                    </form>
-                  </div>
+                    </form> */}
+                  {/* </div> */}
                 </div>
               </div>
             </div>
