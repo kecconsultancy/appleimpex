@@ -1,18 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
-        "fabric", {
-            name: {
+        "tailor", {
+            tailorName: {
                 type: DataTypes.STRING,
             },
-            quality: {
+            tailorShopName: {
                 type: DataTypes.STRING,
             },
 
-            material: {
-                type: DataTypes.STRING,
-            },
-            GSM: {
+            mobileNumber: {
                 type: DataTypes.INTEGER,
+            },
+            address: {
+                type: DataTypes.STRING,
             },
         }, {
             timestamps: false,

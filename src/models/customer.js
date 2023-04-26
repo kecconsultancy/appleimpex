@@ -1,17 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
-        "fabric", {
-            name: {
+        "customer", {
+            customerName: {
                 type: DataTypes.STRING,
             },
-            quality: {
+            shopName: {
                 type: DataTypes.STRING,
             },
 
-            material: {
-                type: DataTypes.STRING,
+            customerPhoneNumber: {
+                type: DataTypes.INTEGER,
             },
-            GSM: {
+            address: {
                 type: DataTypes.INTEGER,
             },
         }, {

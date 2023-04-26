@@ -8,20 +8,20 @@ export function RingForm() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Ring</h5>
+                <h5>Create Eyelet</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Ring Name</label>
+                        <label for="exampleInputEmail1">Eyelet Name</label>
                         <input
                           type="email"
                           class="form-control"
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
-                          placeholder="Ring Name"
+                          placeholder="Eyelet Name"
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -32,7 +32,7 @@ export function RingForm() {
                         <label>Quality</label>
                         <br></br>
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -42,7 +42,7 @@ export function RingForm() {
                         </label>
                         <br></br>
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -52,7 +52,7 @@ export function RingForm() {
                         </label>
                         <br></br>
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -81,7 +81,7 @@ export function RingForm() {
                       </div>
                       {/* <div class="form-group form-check">
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -168,7 +168,7 @@ export function AssingRing() {
                       </div>
                       <div class="form-group form-check">
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />

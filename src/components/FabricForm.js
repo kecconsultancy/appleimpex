@@ -29,6 +29,20 @@ export function FabricForm() {
                         </small> */}
                       </div>
 
+                      
+                      <div class="form-group">
+                        <label for="mat1">Material Type</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mat1"
+                          aria-describedby="emailHelp"
+                          placeholder="material "
+                        />
+                        {/* <small id="emailHelp" class="form-text text-muted">
+                          We'll never share your email with anyone else.
+                        </small> */}
+                      </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Quality</label>
                         {/* <input
@@ -40,7 +54,7 @@ export function FabricForm() {
                       </div>
                       <div class="form-group form-check">
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -50,7 +64,7 @@ export function FabricForm() {
                         </label>
                         <br></br>
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -60,7 +74,7 @@ export function FabricForm() {
                         </label>
                         <br></br>
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
@@ -82,6 +96,7 @@ export function FabricForm() {
                           We'll never share your email with anyone else.
                         </small> */}
                       </div>
+                      
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
@@ -162,7 +177,7 @@ export function AddFabric() {
                       </div>
                       <div class="form-group form-check">
                         <input
-                          type="checkbox"
+                          type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
                         />
