@@ -64,25 +64,25 @@ function TranactionsList() {
             </thead>
             <tbody>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="PENDING"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="DELAYED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"
@@ -108,25 +108,25 @@ function TranactionsList() {
             </thead>
             <tbody>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu v"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="PENDING"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="DELAYED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"
@@ -152,25 +152,25 @@ function TranactionsList() {
             </thead>
             <tbody>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="PENDING"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="DELAYED"
               ></TransactionsListRow>
               <TransactionsListRow
-                name="gandhamathan"
+                name="Abhimanyu V"
                 content="35 per piece"
                 date="2015-04-9"
                 status="COMPLETED"

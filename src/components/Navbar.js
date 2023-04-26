@@ -53,7 +53,7 @@ function Navbar() {
             ></NavbarIcons>
             <NavbarIcons
               placeholder="Create Parceler"
-              link="/createparceler"
+              link="/createparcel"
             ></NavbarIcons>
 
             <li className="nav-item pcoded-menu-caption">
