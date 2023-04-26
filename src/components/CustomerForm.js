@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function CustomerForm() {
+  const [Name, setName] = useState("sd");
+  const [ShopName, setShopName] = useState("");
+  const [PhoneNumber, setPhoneNumber] = useState("");
+  const [Address, setAddress] = useState("");
+  const submit = () => {
+    const CustomerList = JSON.parse(localStorage.getItem("CustomerList"));
+    console.log(CustomerList);
+    if (!CustomerList) {
+      localStorage.setItem(
+        "CustomerList",
+        JSON.stringify([{ Name, ShopName, PhoneNumber, Address }])
+      );
+    } else {
+      CustomerList.push({ Name, ShopName, PhoneNumber, Address });
+      localStorage.setItem("CustomerList", JSON.stringify(CustomerList));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -22,6 +39,10 @@ export function CustomerForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Customer Name"
+                          value={Name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -35,6 +56,10 @@ export function CustomerForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter  Shop Nmae"
+                          value={ShopName}
+                          onChange={(e) => {
+                            setShopName(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -47,6 +72,10 @@ export function CustomerForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter  Phone Number"
+                          value={PhoneNumber}
+                          onChange={(e) => {
+                            setPhoneNumber(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -57,11 +86,15 @@ export function CustomerForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter Address"
+                          value={Address}
+                          onChange={(e) => {
+                            setAddress(e.target.value);
+                          }}
                         />
                       </div>
-                      <button type="submit" class="btn btn-primary">
+                      <div class="btn btn-primary" onClick={(e) => submit()}>
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                 </div>

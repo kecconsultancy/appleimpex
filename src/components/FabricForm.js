@@ -1,7 +1,24 @@
-import React from "react";
-import Inputs, { Selects } from "./Inputs";
+import React, { useState } from "react";
 
 export function FabricForm() {
+  const [Name, setName] = useState("");
+  const [Quality, setQuality] = useState("");
+  const [Material, setMaterial] = useState("");
+  const [GSM, setNumber] = useState(1);
+  const submit = () => {
+    console.log();
+    const fabricData = JSON.parse(localStorage.getItem("fabricList"));
+    console.log(fabricData);
+    if (!fabricData) {
+      localStorage.setItem(
+        "fabricList",
+        JSON.stringify([{ Name, Quality, Material, GSM }])
+      );
+    } else {
+      fabricData.push({ Name, Quality, Material, GSM });
+      localStorage.setItem("fabricList", JSON.stringify(fabricData));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -23,13 +40,16 @@ export function FabricForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter  Fabric Name"
+                          value={Name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
                         </small> */}
                       </div>
 
-                      
                       <div class="form-group">
                         <label for="mat1">Material Type</label>
                         <input
@@ -38,6 +58,10 @@ export function FabricForm() {
                           id="mat1"
                           aria-describedby="emailHelp"
                           placeholder="material "
+                          value={Material}
+                          onChange={(e) => {
+                            setMaterial(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -91,15 +115,19 @@ export function FabricForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Gsm "
+                          value={GSM}
+                          onChange={(e) => {
+                            setNumber(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
                         </small> */}
                       </div>
-                      
-                      <button type="submit" class="btn btn-primary">
+
+                      <div onClick={(e) => submit()} class="btn btn-primary">
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                   {/* <div class="col-md-6"> */}
