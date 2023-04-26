@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function TailorFrom() {
+  const [Name, setName] = useState("sd");
+  const [ShopName, setShopName] = useState("");
+  const [PhoneNumber, setPhoneNumber] = useState("");
+  const [Address, setAddress] = useState("");
+  const submit = () => {
+    const TailorList = JSON.parse(localStorage.getItem("TailorList"));
+    console.log(TailorList);
+    if (!TailorList) {
+      localStorage.setItem(
+        "TailorList",
+        JSON.stringify([{ Name, ShopName, PhoneNumber, Address }])
+      );
+    } else {
+      TailorList.push({ Name, ShopName, PhoneNumber, Address });
+      localStorage.setItem("TailorList", JSON.stringify(TailorList));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -17,11 +34,15 @@ export function TailorFrom() {
                       <div class="form-group">
                         <label for="exampleInputEmail1">Tailor Name</label>
                         <input
-                          type="email"
+                          type="text"
                           class="form-control"
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter Tailor Name"
+                          value={Name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -36,6 +57,10 @@ export function TailorFrom() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Shop Name "
+                          value={ShopName}
+                          onChange={(e) => {
+                            setShopName(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -45,6 +70,10 @@ export function TailorFrom() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Mobile Number  "
+                          value={PhoneNumber}
+                          onChange={(e) => {
+                            setPhoneNumber(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -54,6 +83,10 @@ export function TailorFrom() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Address"
+                          value={Address}
+                          onChange={(e) => {
+                            setAddress(e.target.value);
+                          }}
                         />
                       </div>
                       {/* <div class="form-group form-check">
@@ -66,9 +99,9 @@ export function TailorFrom() {
                           Check me out
                         </label>
                       </div> */}
-                      <button type="submit" class="btn btn-primary">
+                      <div onClick={(e) => submit()} class="btn btn-primary">
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                   <div class="col-md-6">

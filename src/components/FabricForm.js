@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Inputs, { Selects } from "./Inputs";
 
 export function FabricForm() {
   const [Name, setName] = useState("");

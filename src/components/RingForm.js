@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function RingForm() {
+  const [Name, setName] = useState("");
+  const [Quality, setQuality] = useState("");
+  const [Material, setMaterial] = useState("");
+  const [Size, setSize] = useState(1);
+  const submit = () => {
+    console.log();
+    const EyeletList = JSON.parse(localStorage.getItem("EyeletList"));
+    console.log(EyeletList);
+    if (!EyeletList) {
+      localStorage.setItem(
+        "EyeletList",
+        JSON.stringify([{ Name, Quality, Material, Size }])
+      );
+    } else {
+      EyeletList.push({ Name, Quality, Material, Size });
+      localStorage.setItem("EyeletList", JSON.stringify(EyeletList));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -22,6 +40,10 @@ export function RingForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Eyelet Name"
+                          value={Name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -35,6 +57,10 @@ export function RingForm() {
                           type="radio"
                           class="form-check-input"
                           id="exampleCheck1"
+                          value={Quality}
+                          onChange={(e) => {
+                            setQuality(e.target.value);
+                          }}
                         />
 
                         <label class="form-check-label" for="exampleCheck1">
@@ -64,10 +90,14 @@ export function RingForm() {
                       <div class="form-group">
                         <label for="exampleInputPassword1">Size</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Size"
+                          value={Size}
+                          onChange={(e) => {
+                            setSize(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -77,6 +107,10 @@ export function RingForm() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Material"
+                          value={Material}
+                          onChange={(e) => {
+                            setMaterial(e.target.value);
+                          }}
                         />
                       </div>
                       {/* <div class="form-group form-check">
@@ -89,9 +123,9 @@ export function RingForm() {
                           Check me out
                         </label>
                       </div> */}
-                      <button type="submit" class="btn btn-primary">
+                      <div onClick={(e) => submit()} class="btn btn-primary">
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                   {/* <div class="col-md-6">

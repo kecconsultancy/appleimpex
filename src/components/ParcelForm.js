@@ -1,6 +1,23 @@
 import React from "react";
+import { useState } from "react";
 
 export function ParcelForm() {
+  const [Name, setName] = useState("");
+  const [TeamName, setTeamName] = useState("");
+  const [PhoneNumber, setPhoneNumber] = useState();
+  const submit = () => {
+    const parcelerlist = JSON.parse(localStorage.getItem("parcelerlist"));
+    console.log(parcelerlist);
+    if (!parcelerlist) {
+      localStorage.setItem(
+        "parcelerlist",
+        JSON.stringify([{ Name, TeamName, PhoneNumber }])
+      );
+    } else {
+      parcelerlist.push({ Name, TeamName, PhoneNumber });
+      localStorage.setItem("parcelerlist", JSON.stringify(parcelerlist));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -22,6 +39,10 @@ export function ParcelForm() {
                           id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                           placeholder="Enter name"
+                          value={Name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                         />
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
@@ -36,6 +57,10 @@ export function ParcelForm() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Packing Team Name"
+                          value={TeamName}
+                          onChange={(e) => {
+                            setTeamName(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group">
@@ -45,6 +70,10 @@ export function ParcelForm() {
                           class="form-control"
                           id="exampleInputPassword1"
                           placeholder="Enter Phone number"
+                          value={PhoneNumber}
+                          onChange={(e) => {
+                            setPhoneNumber(e.target.value);
+                          }}
                         />
                       </div>
                       <div class="form-group form-check">
@@ -57,9 +86,9 @@ export function ParcelForm() {
                           Check me out
                         </label> */}
                       </div>
-                      <button type="submit" class="btn btn-primary">
+                      <div onClick={(e) => submit()} class="btn btn-primary">
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                   <div class="col-md-6">
