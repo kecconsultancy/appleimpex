@@ -50,11 +50,26 @@ function Navbar() {
             <li className="nav-item pcoded-menu-caption">
               <label>Forms</label>
             </li>
-            <NavbarIcons placeholder="Add Fabric"></NavbarIcons>
-            <NavbarIcons placeholder="Add an order"></NavbarIcons>
-            <NavbarIcons placeholder="Assign Tailor"></NavbarIcons>
-            <NavbarIcons placeholder="Assign Ringer"></NavbarIcons>
-            <NavbarIcons placeholder="Assign Parceler"></NavbarIcons>
+            <NavbarIcons
+             placeholder="Add Fabric" 
+             link="/addfabric"
+             ></NavbarIcons>
+            <NavbarIcons 
+            placeholder="Add an order"
+            link="/editorder"
+            ></NavbarIcons>
+            <NavbarIcons
+             placeholder="Assign Tailor"
+             link="/assigntailor"
+             ></NavbarIcons>
+            <NavbarIcons 
+            placeholder="Assign Ringer"
+            link="/assignringer"
+            ></NavbarIcons>
+            <NavbarIcons
+            placeholder="Assign Parceler"
+            link="assignparceler"
+            ></NavbarIcons>
           </ul>
         </div>
       </div>
