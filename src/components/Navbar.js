@@ -21,17 +21,8 @@ function Navbar() {
             <li className="nav-item pcoded-menu-caption">
               <label>Navigation</label>
             </li>
-            <li
-              data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
-              className="nav-item active"
-            >
-              <a href="index.html" className="nav-link ">
-                <span className="pcoded-micon">
-                  <i className="feather icon-home"></i>
-                </span>
-                <span className="pcoded-mtext">Dashboard</span>
-              </a>
-            </li>
+
+            <NavbarIcons placeholder="Dashboard" link="/"></NavbarIcons>
             <li className="nav-item pcoded-menu-caption">
               <label>Forms</label>
             </li>
