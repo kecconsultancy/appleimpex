@@ -71,7 +71,7 @@ export function EditOrder() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Order</h5>
               </div>
               <div class="card-body">
                 <div class="row">
