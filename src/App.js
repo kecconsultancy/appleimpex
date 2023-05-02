@@ -28,7 +28,7 @@ function App() {
         </Route>
         <Route path="/" element={<FormContainer />}>
           <Route path="addfabric" element={<AddFabric />} />
-          <Route path="editcustomer" element={<EditCustomer />} />
+          {/* <Route path="editcustomer" element={<EditCustomer />} /> */}
           <Route path="editorder" element={<EditOrder />} />
           <Route path="assigntailor" element={<AssignTailor />} />
           <Route path="assignringer" element={<AssingRing />} />
