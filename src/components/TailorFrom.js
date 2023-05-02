@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Inputs, { Selects } from "./Inputs";
+
 
 export function TailorFrom() {
   const [Name, setName] = useState("sd");
@@ -149,51 +151,59 @@ export function AssignTailor() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Orders with Tailor</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
-                        />
-                        <small id="emailHelp" class="form-text text-muted">
-                          We'll never share your email with anyone else.
-                        </small>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div class="form-group form-check">
-                        <input
-                          type="checkbox"
-                          class="form-check-input"
-                          id="exampleCheck1"
-                        />
-                        <label class="form-check-label" for="exampleCheck1">
-                          Check me out
-                        </label>
-                      </div>
+                    <Selects
+                        label="Tailor Name"
+                        option={["Tailor 1", "Tailor 2", "Tailor 3"]}
+                      ></Selects>
+                    <Inputs
+                        type="text"
+                        placeholder=" Tailor Shop name"
+                        label="Shop name"
+                      ></Inputs>
+                      <Inputs
+                        type="number"
+                        placeholder=" Mobile Number"
+                        label="Mobile Number"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder=" Enter Address"
+                        label="Address"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder=" Enter the Quantity"
+                        label="Quantity"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Enter Sent Date"
+                        label="Sent Date"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Enter Expected return Date"
+                        label="Return Date"
+                      ></Inputs>
+                      <Inputs
+                        type="number"
+                        placeholder=" Enter the Amount"
+                        label="Amount"
+                      ></Inputs>
+                      
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
                   <div class="col-md-6">
-                    <form>
+                    {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -217,7 +227,7 @@ export function AssignTailor() {
                           <option>5</option>
                         </select>
                       </div>
-                    </form>
+                    </form> */}
                   </div>
                 </div>
               </div>

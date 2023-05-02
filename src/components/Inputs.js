@@ -21,7 +21,7 @@ export function Selects(props) {
   return (
     <div class="form-group">
       <label for="exampleFormControlSelect1">{props.label}</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" value={props.value} onChange={e=>props.onChange(e.target.value)} id="exampleFormControlSelect1">
         {props.option.map((el) => (
           <option>{el}</option>
         ))}
