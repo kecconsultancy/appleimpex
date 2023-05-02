@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import { Inputs, Selects } from "./Inputs";
 export function ParcelForm() {
   const [Name, setName] = useState("");
   const [TeamName, setTeamName] = useState("");
@@ -32,7 +32,7 @@ export function ParcelForm() {
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
+                        <label for="exampleInputEmail1">Product packager Name</label>
                         <input
                           type="email"
                           class="form-control"
@@ -50,13 +50,13 @@ export function ParcelForm() {
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">
-                          Packing Team Name
+                          Shop name
                         </label>
                         <input
                           type="name"
                           class="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Packing Team Name"
+                          placeholder="Enter Shop name"
                           value={TeamName}
                           onChange={(e) => {
                             setTeamName(e.target.value);
@@ -74,7 +74,14 @@ export function ParcelForm() {
                           onChange={(e) => {
                             setPhoneNumber(e.target.value);
                           }}
+                          
                         />
+                        
+                      <Inputs
+                        type="text"
+                        placeholder=" Enter Address"
+                        label="Address"
+                      ></Inputs>
                       </div>
                       <div class="form-group form-check">
                         {/* <input
@@ -136,51 +143,64 @@ export function AssignParsel() {
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>Create Fabric</h5>
+                <h5>Orders with Packing team</h5>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
-                        />
-                        <small id="emailHelp" class="form-text text-muted">
-                          We'll never share your email with anyone else.
-                        </small>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div class="form-group form-check">
-                        <input
-                          type="checkbox"
-                          class="form-check-input"
-                          id="exampleCheck1"
-                        />
-                        <label class="form-check-label" for="exampleCheck1">
-                          Check me out
-                        </label>
-                      </div>
+                    <Selects
+                        label="Product packager name"
+                        option={["name 1", "name 2", "name 3"]}
+                      ></Selects>
+                    <Inputs
+                        type="text"
+                        placeholder="Shop name"
+                        label="Shop name"
+                      ></Inputs>
+                      <Inputs
+                        type="number"
+                        placeholder=" Mobile Number"
+                        label="Mobile Number"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder=" Enter Address"
+                        label="Address"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder=" Enter Number of pieces given"
+                        label="Pieces"
+                      ></Inputs>
+                      <Inputs
+                        type="text"
+                        placeholder="Enter the total packages"
+                        label="Packages"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Enter Sent Date"
+                        label="Sent Date"
+                      ></Inputs>
+                      <Inputs
+                        type="date"
+                        placeholder="Enter Expected return Date"
+                        label="Return Date"
+                      ></Inputs>
+                      <Inputs
+                        type="number"
+                        placeholder=" Enter the Amount"
+                        label="Amount"
+                      ></Inputs>
+                      
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
                     </form>
                   </div>
                   <div class="col-md-6">
-                    <form>
+                    {/* <form>
                       <div class="form-group">
                         <label>Text</label>
                         <input
@@ -204,7 +224,7 @@ export function AssignParsel() {
                           <option>5</option>
                         </select>
                       </div>
-                    </form>
+                    </form> */}
                   </div>
                 </div>
               </div>
