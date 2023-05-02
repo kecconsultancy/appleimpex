@@ -169,6 +169,42 @@ export function FabricForm() {
 }
 
 export function AddFabric() {
+  const [FabricName, setFabricName] = useState("");
+  const [FabricType, setFabricType] = useState("");
+  const [GSNNumber, setGSNNumber] = useState();
+  const [FabricExportName, setFabricExportName] = useState("");
+  const [FabricQuality, setFabricQuality] = useState("");
+  const [DeliveryDate, setDeliveryDate] = useState();
+  const [Amount, setAmount] = useState();
+  const submitForm = () => {
+    const FabricOrderList = JSON.parse(localStorage.getItem("FabricOrderList"));
+    console.log(FabricOrderList);
+    if (!FabricOrderList) {
+      localStorage.setItem(
+        "FabricOrderList",
+        JSON.stringify([
+          {
+            FabricName,
+            FabricType,
+            GSNNumber,
+            setFabricExportName,
+            DeliveryDate,
+            Amount,
+          },
+        ])
+      );
+    } else {
+      FabricOrderList.push({
+        FabricName,
+        FabricType,
+        GSNNumber,
+        setFabricExportName,
+        DeliveryDate,
+        Amount,
+      });
+      localStorage.setItem("FabricOrderList", JSON.stringify(FabricOrderList));
+    }
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -186,21 +222,29 @@ export function AddFabric() {
                         type="text"
                         placeholder="Fabric Name"
                         label="Fabric name"
+                        value={FabricName}
+                        onChange={(value) => setFabricName(value)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder="Fabric Type"
                         label="Fabric Type"
+                        value={FabricType}
+                        onChange={(value) => setFabricType(value)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder="GSM Number"
                         label="GSM Number"
+                        value={GSNNumber}
+                        onChange={(value) => setGSNNumber(value)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder="Fabric export name"
                         label="Fabric export name"
+                        value={FabricExportName}
+                        onChange={(value) => setFabricExportName(value)}
                       ></Inputs>
                       <Selects
                         label="Quality"
@@ -210,15 +254,22 @@ export function AddFabric() {
                         type="date"
                         placeholder="Date"
                         label="Date"
+                        value={DeliveryDate}
+                        onChange={(value) => setDeliveryDate(value)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Amount"
                         label="Amount in Rupees"
+                        value={Amount}
+                        onChange={(value) => setAmount(value)}
                       ></Inputs>
-                      <button type="submit" class="btn btn-primary">
+                      <div
+                        onClick={(e) => submitForm()}
+                        class="btn btn-primary"
+                      >
                         Submit
-                      </button>
+                      </div>
                     </form>
                   </div>
                 </div>

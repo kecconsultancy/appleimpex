@@ -19,41 +19,6 @@ function RecentTransactions() {
                   delivered={false}
                   value={450}
                 ></RecentListRows>
-                <RecentListRows
-                  customerName="Customer2"
-                  count={56}
-                  date="2/1/2003"
-                  delivered={false}
-                  value={450}
-                ></RecentListRows>
-                <RecentListRows
-                  customerName="Customer3"
-                  count={56}
-                  date="6/1/2003"
-                  delivered={true}
-                  value={230}
-                ></RecentListRows>
-                <RecentListRows
-                  customerName="Customer4"
-                  count={56}
-                  date="8/1/2003"
-                  delivered={true}
-                  value={450}
-                ></RecentListRows>
-                <RecentListRows
-                  customerName="Customer5"
-                  count={56}
-                  date="12/1/2003"
-                  delivered={true}
-                  value={450}
-                ></RecentListRows>
-                <RecentListRows
-                  customerName="Customer5"
-                  count={56}
-                  date="12/1/2003"
-                  delivered={true}
-                  value={450}
-                ></RecentListRows>
               </tbody>
             </table>
           </div>

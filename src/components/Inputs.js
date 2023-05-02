@@ -10,6 +10,8 @@ export function Inputs(props) {
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
         placeholder={props.placeholder}
+        value={props.value}
+        onChange={(e) => props.onChange(e.target.value)}
       />
     </div>
   );
