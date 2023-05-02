@@ -64,9 +64,8 @@ export function OrderForm() {
   );
 }
 export function EditOrder() {
- const [fabricName,setFabricName]= useState("");
- const [GSMNumber,setGSMNumber]= useState("");
- 
+  const [fabricName, setFabricName] = useState("");
+  const [GSMNumber, setGSMNumber] = useState("");
 
   return (
     <div class="main-body">
@@ -81,13 +80,25 @@ export function EditOrder() {
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                     <Selects
+                      <Selects
                         label="Fabric name"
-                        option={["Fabric name 1 ", "Fabric name 2", "Fabric name 3","Fabric name 4"]}
+                        option={[
+                          "Fabric name 1 ",
+                          "Fabric name 2",
+                          "Fabric name 3",
+                          "Fabric name 4",
+                        ]}
+                        value={fabricName}
+                        onChange={setFabricName}
                       ></Selects>
                       <Selects
                         label="Fabric type"
-                        option={["Fabric type 1 ", "Fabric Type 2", "Fabric Type 3","Fabric Type 4"]}
+                        option={[
+                          "Fabric type 1 ",
+                          "Fabric Type 2",
+                          "Fabric Type 3",
+                          "Fabric Type 4",
+                        ]}
                       ></Selects>
                       <Inputs
                         type="number"
@@ -98,7 +109,7 @@ export function EditOrder() {
                       ></Inputs>
                       <Selects
                         label="Fabric Buyer name"
-                        option={["Buyer 1", "Buyer 2", "Buyer 3","Buyer 4"]}
+                        option={["Buyer 1", "Buyer 2", "Buyer 3", "Buyer 4"]}
                       ></Selects>
                       <Inputs
                         type="text"
@@ -124,7 +135,7 @@ export function EditOrder() {
                         placeholder=" Amount"
                         label="Amount in Rupees"
                       ></Inputs>
-                      
+
                       <button type="submit" class="btn btn-primary">
                         Submit
                       </button>
