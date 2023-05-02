@@ -6,7 +6,7 @@ function CardProfiltLoss(props) {
   useEffect(() => {
     props.amount >= 0 ? setProfit(true) : setProfit(false);
     setPercentage(props.percentage + "%");
-  }, []);
+  }, [props]);
 
   return (
     <div className="col-md-6 col-xl-4">

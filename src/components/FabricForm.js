@@ -176,8 +176,10 @@ export function AddFabric() {
   const [FabricQuality, setFabricQuality] = useState("");
   const [DeliveryDate, setDeliveryDate] = useState();
   const [Amount, setAmount] = useState();
+
   const submitForm = () => {
     const FabricOrderList = JSON.parse(localStorage.getItem("FabricOrderList"));
+    const TransactionList = JSON.parse(localStorage.getItem("TransactionList"));
     console.log(FabricOrderList);
     if (!FabricOrderList) {
       localStorage.setItem(
@@ -203,6 +205,23 @@ export function AddFabric() {
         Amount,
       });
       localStorage.setItem("FabricOrderList", JSON.stringify(FabricOrderList));
+    }
+    if (!TransactionList) {
+      localStorage.setItem(
+        "TransactionList",
+        JSON.stringify([
+          {
+            amount: parseInt(Amount) * -1,
+            date: new Date(),
+          },
+        ])
+      );
+    } else {
+      TransactionList.push({
+        amount: parseInt(Amount) * -1,
+        date: new Date(),
+      });
+      localStorage.setItem("TransactionList", JSON.stringify(TransactionList));
     }
   };
   return (
