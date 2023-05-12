@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Inputs, { Selects } from "./Inputs";
-
+import { setDataToStorage } from "../utils/functions";
 
 export function TailorFrom() {
   const [Name, setName] = useState("sd");
@@ -8,17 +8,7 @@ export function TailorFrom() {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [Address, setAddress] = useState("");
   const submit = () => {
-    const TailorList = JSON.parse(localStorage.getItem("TailorList"));
-    console.log(TailorList);
-    if (!TailorList) {
-      localStorage.setItem(
-        "TailorList",
-        JSON.stringify([{ Name, ShopName, PhoneNumber, Address }])
-      );
-    } else {
-      TailorList.push({ Name, ShopName, PhoneNumber, Address });
-      localStorage.setItem("TailorList", JSON.stringify(TailorList));
-    }
+    setDataToStorage("TailorList", { Name, ShopName, PhoneNumber, Address });
   };
   return (
     <div class="main-body">
@@ -144,6 +134,27 @@ export function TailorFrom() {
 }
 
 export function AssignTailor() {
+  const [TailorName, setTailorName] = useState("");
+  const [ShopName, setShopName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Quantity, setQuantity] = useState("");
+  const [SentDate, setSentDate] = useState("");
+  const [DeliveryDate, setDeliveryDate] = useState("");
+  const [Amount, setAmount] = useState("");
+  const SubmitForm = (e) => {
+    setDataToStorage("AssighTailorList", {
+      TailorName,
+      ShopName,
+      Number,
+      Address,
+      Quantity,
+      SentDate,
+      DeliveryDate,
+      Amount,
+      status: "PENDING",
+    });
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -157,47 +168,67 @@ export function AssignTailor() {
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                    <Selects
+                      <Selects
                         label="Tailor Name"
                         option={["Tailor 1", "Tailor 2", "Tailor 3"]}
+                        value={TailorName}
+                        onChange={(e) => setTailorName(e)}
                       ></Selects>
-                    <Inputs
+                      <Inputs
                         type="text"
                         placeholder=" Tailor Shop name"
                         label="Shop name"
+                        value={ShopName}
+                        onChange={(e) => setShopName(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Mobile Number"
                         label="Mobile Number"
+                        value={Number}
+                        onChange={(e) => setNumber(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Enter Address"
                         label="Address"
+                        value={Address}
+                        onChange={(e) => setAddress(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Enter the Quantity"
                         label="Quantity"
+                        value={Quantity}
+                        onChange={(e) => setQuantity(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Sent Date"
                         label="Sent Date"
+                        value={SentDate}
+                        onChange={(e) => setSentDate(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Expected return Date"
                         label="Return Date"
+                        value={DeliveryDate}
+                        onChange={(e) => setDeliveryDate(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Enter the Amount"
                         label="Amount"
+                        value={Amount}
+                        onChange={(e) => setAmount(e)}
                       ></Inputs>
-                      
-                      <button type="submit" class="btn btn-primary">
+
+                      <button
+                        type="button"
+                        onClick={(e) => SubmitForm(e)}
+                        class="btn btn-primary"
+                      >
                         Submit
                       </button>
                     </form>

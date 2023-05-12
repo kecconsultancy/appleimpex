@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Inputs, { Selects } from "./Inputs";
+import { setDataToStorage } from "../utils/functions";
 
 export function FabricForm() {
   const [Name, setName] = useState("");
@@ -8,17 +9,7 @@ export function FabricForm() {
   const [GSM, setNumber] = useState(1);
   const submit = () => {
     console.log();
-    const fabricData = JSON.parse(localStorage.getItem("fabricList"));
-    console.log(fabricData);
-    if (!fabricData) {
-      localStorage.setItem(
-        "fabricList",
-        JSON.stringify([{ Name, Quality, Material, GSM }])
-      );
-    } else {
-      fabricData.push({ Name, Quality, Material, GSM });
-      localStorage.setItem("fabricList", JSON.stringify(fabricData));
-    }
+    setDataToStorage("fabricList", { Name, Quality, Material, GSM });
   };
   return (
     <div class="main-body">
@@ -178,51 +169,18 @@ export function AddFabric() {
   const [Amount, setAmount] = useState();
 
   const submitForm = () => {
-    const FabricOrderList = JSON.parse(localStorage.getItem("FabricOrderList"));
-    const TransactionList = JSON.parse(localStorage.getItem("TransactionList"));
-    console.log(FabricOrderList);
-    if (!FabricOrderList) {
-      localStorage.setItem(
-        "FabricOrderList",
-        JSON.stringify([
-          {
-            FabricName,
-            FabricType,
-            GSNNumber,
-            setFabricExportName,
-            DeliveryDate,
-            Amount,
-          },
-        ])
-      );
-    } else {
-      FabricOrderList.push({
-        FabricName,
-        FabricType,
-        GSNNumber,
-        setFabricExportName,
-        DeliveryDate,
-        Amount,
-      });
-      localStorage.setItem("FabricOrderList", JSON.stringify(FabricOrderList));
-    }
-    if (!TransactionList) {
-      localStorage.setItem(
-        "TransactionList",
-        JSON.stringify([
-          {
-            amount: parseInt(Amount) * -1,
-            date: new Date(),
-          },
-        ])
-      );
-    } else {
-      TransactionList.push({
-        amount: parseInt(Amount) * -1,
-        date: new Date(),
-      });
-      localStorage.setItem("TransactionList", JSON.stringify(TransactionList));
-    }
+    setDataToStorage("FabricOrderList", {
+      FabricName,
+      FabricType,
+      GSNNumber,
+      setFabricExportName,
+      DeliveryDate,
+      Amount,
+    });
+    setDataToStorage("TransactionList", {
+      amount: parseInt(Amount) * -1,
+      date: new Date(),
+    });
   };
   return (
     <div class="main-body">
@@ -268,6 +226,8 @@ export function AddFabric() {
                       <Selects
                         label="Quality"
                         option={["Low", "Medium", "High"]}
+                        value={FabricQuality}
+                        onChange={(e) => setFabricQuality(e)}
                       ></Selects>
                       <Inputs
                         type="date"

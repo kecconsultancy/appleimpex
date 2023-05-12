@@ -28,7 +28,7 @@ export function Selects(props) {
         id="exampleFormControlSelect1"
       >
         {props.option.map((el) => (
-          <option>{el}</option>
+          <option value={el}>{el}</option>
         ))}
       </select>
     </div>

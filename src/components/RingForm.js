@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import Inputs, { Selects } from "./Inputs";
+import { setDataToStorage } from "../utils/functions";
 export function RingForm() {
-  const [Name, setName] = useState("");
+  const [RingerName, setRingerName] = useState("");
+  const [RingerShopName, setRingerShopName] = useState("");
+  const [EyeletName, setEyeletName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Address, setAddress] = useState("");
   const [Quality, setQuality] = useState("");
   const [Material, setMaterial] = useState("");
   const [Size, setSize] = useState(1);
+
   const submit = () => {
     console.log();
-    const EyeletList = JSON.parse(localStorage.getItem("EyeletList"));
-    console.log(EyeletList);
-    if (!EyeletList) {
-      localStorage.setItem(
-        "EyeletList",
-        JSON.stringify([{ Name, Quality, Material, Size }])
-      );
-    } else {
-      EyeletList.push({ Name, Quality, Material, Size });
-      localStorage.setItem("EyeletList", JSON.stringify(EyeletList));
-    }
+    setDataToStorage("EyeletList", {
+      RingerName,
+      RingerShopName,
+      EyeletName,
+      Number,
+      Address,
+      Quality,
+      Material,
+      Size,
+    });
   };
   return (
     <div class="main-body">
@@ -33,44 +38,51 @@ export function RingForm() {
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        
                         <Inputs
-                        type="text"
-                        placeholder="Enter Ringer name"
-                        label="Ringer name"
+                          type="text"
+                          placeholder="Enter Ringer name"
+                          label="Ringer name"
+                          onChange={(e) => setRingerName(e)}
+                          value={RingerName}
                         ></Inputs>
-                        
-                      <Inputs
-                        type="text"
-                        placeholder="Enter Ringer Shop name"
-                        label="Enter Ringer Shop name"
-                      ></Inputs>
-                      <Inputs
-                        type="number"
-                        placeholder=" Enter phone number"
-                        label="Phone Number"
-                      ></Inputs>
-                      <Inputs
-                        type="text"
-                        placeholder="Enter Address"
-                        label="Address"
-                      ></Inputs>
+
+                        <Inputs
+                          type="text"
+                          placeholder="Enter Ringer Shop name"
+                          label="Enter Ringer Shop name"
+                          onChange={(e) => setRingerShopName(e)}
+                          value={RingerShopName}
+                        ></Inputs>
+                        <Inputs
+                          type="number"
+                          placeholder=" Enter phone number"
+                          label="Phone Number"
+                          value={Number}
+                          onChange={(e) => setNumber(e)}
+                        ></Inputs>
+                        <Inputs
+                          type="text"
+                          placeholder="Enter Address"
+                          label="Address"
+                          value={Address}
+                          onChange={(e) => setAddress(e)}
+                        ></Inputs>
                         {/* <small id="emailHelp" class="form-text text-muted">
                           We'll never share your email with anyone else.
                         </small> */}
                       </div>
                       <label for="exampleInputEmail1">Eyelet Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          aria-describedby="emailHelp"
-                          placeholder="Eyelet Name"
-                          value={Name}
-                          onChange={(e) => {
-                            setName(e.target.value);
-                          }}  
-                        />
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Eyelet Name"
+                        value={EyeletName}
+                        onChange={(e) => {
+                          setEyeletName(e.target.value);
+                        }}
+                      />
                       <div class="form-group form-check">
                         <label>Quality</label>
                         <br></br>
@@ -186,6 +198,28 @@ export function RingForm() {
   );
 }
 export function AssingRing() {
+  const [RingerName, setRingerName] = useState("");
+  const [shopName, setshopName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Pices, setPices] = useState("");
+  const [SentDate, setSentDate] = useState("");
+  const [DeliveryDate, setDeliveryDate] = useState("");
+  const [Amount, setAmount] = useState("");
+  const submitForm = (e) => {
+    e.preventDefault();
+    setDataToStorage("AssignRingerList", {
+      RingerName,
+      shopName,
+      Number,
+      Address,
+      Pices,
+      SentDate,
+      DeliveryDate,
+      Amount,
+      status: "PENDING",
+    });
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -199,47 +233,67 @@ export function AssingRing() {
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                    <Selects
+                      <Selects
                         label="Ringer Name"
                         option={["Ringer 1", "Ringer 2", "Tailor 3"]}
+                        value={RingerName}
+                        onChange={(e) => setRingerName(e)}
                       ></Selects>
-                    <Inputs
+                      <Inputs
                         type="text"
                         placeholder=" Riger Shop name"
                         label="Shop name"
+                        value={shopName}
+                        onChange={(e) => setshopName(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Mobile Number"
                         label="Mobile Number"
+                        value={Number}
+                        onChange={(e) => setNumber(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Enter Address"
                         label="Address"
+                        value={Address}
+                        onChange={(e) => setAddress(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Number of pieces given"
                         label="Pieces"
+                        value={Pices}
+                        onChange={(e) => setPices(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Sent Date"
                         label="Sent Date"
+                        value={SentDate}
+                        onChange={(e) => setSentDate(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Expected return Date"
                         label="Return Date"
+                        value={DeliveryDate}
+                        onChange={(e) => setDeliveryDate(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Enter the Amount"
                         label="Amount"
+                        value={Amount}
+                        onChange={(e) => setAmount(e)}
                       ></Inputs>
-                      
-                      <button type="submit" class="btn btn-primary">
+
+                      <button
+                        type="submit"
+                        onClick={(e) => submitForm(e)}
+                        class="btn btn-primary"
+                      >
                         Submit
                       </button>
                     </form>

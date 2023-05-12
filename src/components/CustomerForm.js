@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { setDataToStorage } from "../utils/functions";
 
 export function CustomerForm() {
   const [Name, setName] = useState("sd");
@@ -6,17 +7,7 @@ export function CustomerForm() {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [Address, setAddress] = useState("");
   const submit = () => {
-    const CustomerList = JSON.parse(localStorage.getItem("CustomerList"));
-    console.log(CustomerList);
-    if (!CustomerList) {
-      localStorage.setItem(
-        "CustomerList",
-        JSON.stringify([{ Name, ShopName, PhoneNumber, Address }])
-      );
-    } else {
-      CustomerList.push({ Name, ShopName, PhoneNumber, Address });
-      localStorage.setItem("CustomerList", JSON.stringify(CustomerList));
-    }
+    setDataToStorage("CustomerList", { Name, ShopName, PhoneNumber, Address });
   };
   return (
     <div class="main-body">

@@ -1,22 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { Inputs, Selects } from "./Inputs";
+import { setDataToStorage } from "../utils/functions";
 export function ParcelForm() {
   const [Name, setName] = useState("");
   const [TeamName, setTeamName] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState();
+  const [Address, setAddress] = useState();
   const submit = () => {
-    const parcelerlist = JSON.parse(localStorage.getItem("parcelerlist"));
-    console.log(parcelerlist);
-    if (!parcelerlist) {
-      localStorage.setItem(
-        "parcelerlist",
-        JSON.stringify([{ Name, TeamName, PhoneNumber }])
-      );
-    } else {
-      parcelerlist.push({ Name, TeamName, PhoneNumber });
-      localStorage.setItem("parcelerlist", JSON.stringify(parcelerlist));
-    }
+    setDataToStorage("parcelerlist", { Name, TeamName, PhoneNumber, Address });
   };
   return (
     <div class="main-body">
@@ -32,7 +24,9 @@ export function ParcelForm() {
                   <div class="col-md-6">
                     <form>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Product packager Name</label>
+                        <label for="exampleInputEmail1">
+                          Product packager Name
+                        </label>
                         <input
                           type="email"
                           class="form-control"
@@ -49,9 +43,7 @@ export function ParcelForm() {
                         </small> */}
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">
-                          Shop name
-                        </label>
+                        <label for="exampleInputPassword1">Shop name</label>
                         <input
                           type="name"
                           class="form-control"
@@ -74,14 +66,15 @@ export function ParcelForm() {
                           onChange={(e) => {
                             setPhoneNumber(e.target.value);
                           }}
-                          
                         />
-                        
-                      <Inputs
-                        type="text"
-                        placeholder=" Enter Address"
-                        label="Address"
-                      ></Inputs>
+
+                        <Inputs
+                          type="text"
+                          placeholder=" Enter Address"
+                          label="Address"
+                          value={Address}
+                          onChange={(e) => setAddress(e)}
+                        ></Inputs>
                       </div>
                       <div class="form-group form-check">
                         {/* <input
@@ -136,6 +129,30 @@ export function ParcelForm() {
 }
 
 export function AssignParsel() {
+  const [PackageName, setPackageName] = useState("");
+  const [ShopName, setShopName] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Pieces, setPieces] = useState("");
+  const [Packages, setPackages] = useState("");
+  const [SentDate, setSentDate] = useState("");
+  const [ReturnDate, setReturnDate] = useState("");
+  const [Amount, setAmount] = useState("");
+  const SubmitForm = (e) => {
+    console.log(e);
+    setDataToStorage("AssignParcelerList", {
+      PackageName,
+      ShopName,
+      Number,
+      Address,
+      Pieces,
+      Packages,
+      SentDate,
+      ReturnDate,
+      Amount,
+      status: "PENDING",
+    });
+  };
   return (
     <div class="main-body">
       <div class="page-wrapper">
@@ -149,52 +166,73 @@ export function AssignParsel() {
                 <div class="row">
                   <div class="col-md-6">
                     <form>
-                    <Selects
+                      <Selects
                         label="Product packager name"
                         option={["name 1", "name 2", "name 3"]}
+                        onChange={(e) => setPackageName(e)}
                       ></Selects>
-                    <Inputs
+                      <Inputs
                         type="text"
                         placeholder="Shop name"
                         label="Shop name"
+                        value={ShopName}
+                        onChange={(e) => setShopName(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Mobile Number"
                         label="Mobile Number"
+                        value={Number}
+                        onChange={(e) => setNumber(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Enter Address"
                         label="Address"
+                        value={Address}
+                        onChange={(e) => setAddress(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder=" Enter Number of pieces given"
                         label="Pieces"
+                        value={Pieces}
+                        onChange={(e) => setPieces(e)}
                       ></Inputs>
                       <Inputs
                         type="text"
                         placeholder="Enter the total packages"
                         label="Packages"
+                        value={Packages}
+                        onChange={(e) => setPackages(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Sent Date"
                         label="Sent Date"
+                        value={SentDate}
+                        onChange={(e) => setSentDate(e)}
                       ></Inputs>
                       <Inputs
                         type="date"
                         placeholder="Enter Expected return Date"
                         label="Return Date"
+                        value={ReturnDate}
+                        onChange={(e) => setReturnDate(e)}
                       ></Inputs>
                       <Inputs
                         type="number"
                         placeholder=" Enter the Amount"
                         label="Amount"
+                        value={Amount}
+                        onChange={(e) => setAmount(e)}
                       ></Inputs>
-                      
-                      <button type="submit" class="btn btn-primary">
+
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        onClick={(e) => SubmitForm(e)}
+                      >
                         Submit
                       </button>
                     </form>

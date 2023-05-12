@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RecentListRows from "./RecentListRows";
+import { getDataFromStorage } from "../utils/functions";
 
 function RecentTransactions() {
+  const [CustomerData, setCustomerData] = useState([]);
+  useEffect(() => {
+    const Orders = getDataFromStorage("AssighTailorList")
+      ?.sort((a, b) => a.DeliveryDate - b.DeliveryDate)
+      .slice(-5);
+    setCustomerData(Orders);
+  }, []);
+
   return (
     <div className="col-xl-8 col-md-6">
       <div className="card Recent-Users">
@@ -12,13 +21,26 @@ function RecentTransactions() {
           <div className="table-responsive">
             <table className="table table-hover">
               <tbody>
-                <RecentListRows
-                  customerName="customer 1"
-                  count={56}
-                  date="11/1/2003"
-                  delivered={false}
-                  value={450}
-                ></RecentListRows>
+                {/* {
+    "FabricName": "",
+    "FabricType": "",
+    "GSMnumber": "",
+    "FabricBuyerName": "",
+    "FabricBuyerAddress": "",
+    "FabricQuality": "",
+    "FabricQuantity": "",
+    "DeliveryDate": "",
+    "Amount": "100000"
+} */}
+                {CustomerData.map((el) => (
+                  <RecentListRows
+                    customerName={el.FabricBuyerName}
+                    count={el.Quantity}
+                    date={el.DeliveryDate}
+                    delivered={false}
+                    value={el.Amount}
+                  ></RecentListRows>
+                ))}
               </tbody>
             </table>
           </div>

@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TransactionsListRow from "./TransactionsListRow";
+import { getDataFromStorage } from "../utils/functions";
 
 function TranactionsList() {
+  const [TailorData, setTailorData] = useState([]);
+  const [RingerData, setRingerData] = useState([]);
+  const [ParcelerData, setParcelerData] = useState([]);
+  useEffect(() => {
+    const Tailor = getDataFromStorage("AssighTailorList")
+      ?.sort((a, b) => a.DeliveryDate - b.DeliveryDate)
+      .slice(-5);
+    const Ringer = getDataFromStorage("AssignRingerList")
+      ?.sort((a, b) => a.DeliveryDate - b.DeliveryDate)
+      .slice(-5);
+    const Parceler = getDataFromStorage("AssignParcelerList")
+      ?.sort((a, b) => a.ReturnDate - b.ReturnDate)
+      .slice(-5);
+    setTailorData(Tailor);
+    setRingerData(Ringer);
+    setParcelerData(Parceler);
+  }, []);
+
   return (
     <div className="col-xl-12 col-md-12 m-b-30">
       <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -63,30 +82,14 @@ function TranactionsList() {
               </tr>
             </thead>
             <tbody>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="PENDING"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="DELAYED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
+              {TailorData?.map((el) => (
+                <TransactionsListRow
+                  name={el.TailorName}
+                  content={`${el.Quantity} per piece`}
+                  date={el.DeliveryDate}
+                  status={el.status}
+                ></TransactionsListRow>
+              ))}
             </tbody>
           </table>
         </div>
@@ -107,30 +110,14 @@ function TranactionsList() {
               </tr>
             </thead>
             <tbody>
-              <TransactionsListRow
-                name="Abhimanyu v"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="PENDING"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="DELAYED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
+              {RingerData?.map((el) => (
+                <TransactionsListRow
+                  name={el.RingerName}
+                  content={`${el.Pices} per piece`}
+                  date={el.DeliveryDate}
+                  status={el.status}
+                ></TransactionsListRow>
+              ))}
             </tbody>
           </table>
         </div>
@@ -151,30 +138,14 @@ function TranactionsList() {
               </tr>
             </thead>
             <tbody>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="PENDING"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="DELAYED"
-              ></TransactionsListRow>
-              <TransactionsListRow
-                name="Abhimanyu V"
-                content="35 per piece"
-                date="2015-04-9"
-                status="COMPLETED"
-              ></TransactionsListRow>
+              {ParcelerData?.map((el) => (
+                <TransactionsListRow
+                  name={el.PackageName}
+                  content={`${el.Pieces} per piece`}
+                  date={el.ReturnDate}
+                  status={el.status}
+                ></TransactionsListRow>
+              ))}
             </tbody>
           </table>
         </div>

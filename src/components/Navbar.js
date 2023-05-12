@@ -51,24 +51,24 @@ function Navbar() {
               <label>Forms</label>
             </li>
             <NavbarIcons
-             placeholder="Add Fabric" 
-             link="/addfabric"
-             ></NavbarIcons>
-            <NavbarIcons 
-            placeholder="Add an order"
-            link="/editorder"
+              placeholder="Add Fabric"
+              link="/addfabric"
             ></NavbarIcons>
             <NavbarIcons
-             placeholder="Assign Tailor"
-             link="/assigntailor"
-             ></NavbarIcons>
-            <NavbarIcons 
-            placeholder="Assign Ringer"
-            link="/assignringer"
+              placeholder="Add an order"
+              link="/createorder"
             ></NavbarIcons>
             <NavbarIcons
-            placeholder="Assign Parceler"
-            link="assignparceler"
+              placeholder="Assign Tailor"
+              link="/assigntailor"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Assign Ringer"
+              link="/assignringer"
+            ></NavbarIcons>
+            <NavbarIcons
+              placeholder="Assign Parceler"
+              link="assignparceler"
             ></NavbarIcons>
           </ul>
         </div>
